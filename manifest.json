@@ -1,0 +1,29 @@
+{
+  "manifest_version": 3,
+  "name": "BGA Stream-Safe Blur",
+  "description": "Blurs the board on certain BGA Co-Op Games",
+  "version": "1.0",
+  "icons": {
+    "16": "icon-16.png",
+    "32": "icon-32.png",
+    "48": "icon-48.png",
+    "128": "icon.png"
+  },
+  "content_scripts": [
+    {
+      "css": [ "blur.css" ],
+      "run_at": "document_start",
+      "all_frames": true,
+      "matches": [
+        "https://boardgamearena.com/*/hanabi*",
+        "https://boardgamearena.com/*/heroesofhellas*",
+        "https://boardgamearena.com/*/stella*",
+        "https://boardgamearena.com/*/haiclue*",
+        "https://boardgamearena.com/*/tranquility*"
+      ]
+    }
+  ],
+  "host_permissions": [
+    "https://boardgamearena.com/*"
+  ]
+}
